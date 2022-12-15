@@ -1,3 +1,6 @@
+<?php
+$footerLinks = config('comicsdb.footerLinks');
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -17,7 +20,13 @@
 
 <body>
 
-    @yield('ready')
+    @include('partials.topBanner')
+    @include('partials.header')
+    @include('partials.jumbotron')
+    <main>
+        @yield('ready')
+    </main>
+    @include('partials.footer', compact('footerLinks'))
 
 </body>
 
